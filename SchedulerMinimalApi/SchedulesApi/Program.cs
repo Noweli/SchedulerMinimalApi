@@ -38,7 +38,7 @@ schedules.MapPost("/", async (AppDbContext db, ScheduleDto scheduleDto) =>
         End = scheduleDto.End.ToUniversalTime()
     };
 
-    if(schedule.ScheduleName is null)
+    if(string.IsNullOrEmpty(scheduleDto.ScheduleName))
     {
         return Results.BadRequest(ErrorMessages.ScheduleNameRequired);
     }

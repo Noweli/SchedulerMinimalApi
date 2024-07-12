@@ -30,7 +30,7 @@ users.MapPost("/", async (AppDbContext db, string userName) =>
 {
     var user = new User { Username = userName };
     
-    if(user.Username is null)
+    if(string.IsNullOrEmpty(user.Username))
     {
         return Results.BadRequest(ErrorMessages.UsernameRequired);
     }

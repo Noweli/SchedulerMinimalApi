@@ -9,4 +9,6 @@ public record Schedule
     [Required] [MaxLength(50)] public string? ScheduleName { get; init; }
     [Required] public DateTime Start { get; init; }
     [Required] public DateTime End { get; init; }
+
+    public Address? Address { get; init; }
 }
