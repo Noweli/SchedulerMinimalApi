@@ -76,5 +76,23 @@ namespace SchedulesApi.Resources {
                 return ResourceManager.GetString("ScheduleNameRequired", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start date occurs after end date..
+        /// </summary>
+        internal static string StartDateAfterEndDate {
+            get {
+                return ResourceManager.GetString("StartDateAfterEndDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User not found..
+        /// </summary>
+        internal static string UserNotFound {
+            get {
+                return ResourceManager.GetString("UserNotFound", resourceCulture);
+            }
+        }
     }
 }

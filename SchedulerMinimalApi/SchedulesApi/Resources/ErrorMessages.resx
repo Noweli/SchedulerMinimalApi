@@ -24,4 +24,10 @@
     <data name="ScheduleAlreadyExists" xml:space="preserve">
         <value>Schedule with provided name aready exists.</value>
     </data>
+    <data name="StartDateAfterEndDate" xml:space="preserve">
+        <value>Start date occurs after end date.</value>
+    </data>
+    <data name="UserNotFound" xml:space="preserve">
+        <value>User not found.</value>
+    </data>
 </root>
