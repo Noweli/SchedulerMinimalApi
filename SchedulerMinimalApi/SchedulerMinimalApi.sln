@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchedulerMinimalApi", "SchedulerMinimalApi\SchedulerMinimalApi.csproj", "{4E10A362-D1F1-4DB2-A88C-5397592174A0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchedulerUserApi", "SchedulerUserApi\SchedulerUserApi.csproj", "{4E10A362-D1F1-4DB2-A88C-5397592174A0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

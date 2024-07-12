@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace SchedulerMinimalApi.Database.Models;
+namespace SchedulerUserApi.Database.Models;
 
 public record User
 {
