@@ -46,4 +46,19 @@ users.MapPost("/", async (AppDbContext db, string userName) =>
     return Results.Created($"/users/{user.Id}", user);
 });
 
+users.MapDelete("/{id:int}", async (AppDbContext db, int id) =>
+{
+    var user = await db.Users.FindAsync(id);
+
+    if(user is null)
+    {
+        return Results.NotFound();
+    }
+
+    db.Users.Remove(user);
+    await db.SaveChangesAsync();
+
+    return Results.NoContent();
+});
+
 app.Run();
