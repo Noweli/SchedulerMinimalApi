@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SchedulerUserApi.Resources {
+namespace UserApi.Resources {
     using System;
     
     

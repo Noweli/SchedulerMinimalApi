@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using SchedulerUserApi.Database;
-using SchedulerUserApi.Database.Models;
-using SchedulerUserApi.Resources;
+using SchedulerDatabase;
+using SchedulerDatabase.Models;
+using UserApi.Resources;
 
 var builder = WebApplication.CreateBuilder(args);
 
