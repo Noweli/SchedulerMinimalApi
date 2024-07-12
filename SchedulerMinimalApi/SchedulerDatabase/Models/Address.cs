@@ -9,5 +9,6 @@ public record Address
     [MaxLength(50)] public string? Street { get; init; }
     [MaxLength(10)] public string? HomeNo { get; init; }
 
+    public int ScheduleId { get; set; }
     public Schedule Schedule { get; init; } = null!;
 }

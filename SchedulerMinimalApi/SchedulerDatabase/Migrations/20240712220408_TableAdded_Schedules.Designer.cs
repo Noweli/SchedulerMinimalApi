@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using SchedulerDatabase;
@@ -11,9 +12,11 @@ using SchedulerDatabase;
 namespace SchedulerDatabase.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240712220408_TableAdded_Schedules")]
+    partial class TableAdded_Schedules
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -25,10 +28,7 @@ namespace SchedulerDatabase.Migrations
             modelBuilder.Entity("SchedulerDatabase.Models.Address", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<string>("City")
                         .IsRequired()
@@ -39,17 +39,11 @@ namespace SchedulerDatabase.Migrations
                         .HasMaxLength(10)
                         .HasColumnType("character varying(10)");
 
-                    b.Property<int>("ScheduleId")
-                        .HasColumnType("integer");
-
                     b.Property<string>("Street")
                         .HasMaxLength(50)
                         .HasColumnType("character varying(50)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ScheduleId")
-                        .IsUnique();
 
                     b.ToTable("Addresses");
                 });
@@ -103,7 +97,7 @@ namespace SchedulerDatabase.Migrations
                 {
                     b.HasOne("SchedulerDatabase.Models.Schedule", "Schedule")
                         .WithOne("Address")
-                        .HasForeignKey("SchedulerDatabase.Models.Address", "ScheduleId")
+                        .HasForeignKey("SchedulerDatabase.Models.Address", "Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
